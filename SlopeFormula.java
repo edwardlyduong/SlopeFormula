@@ -3,24 +3,32 @@ import java.util.Scanner;
 
 public class SlopeFormula {
 
-    static double slope(double x1, double y1, double x2, double y2)
-    {
+
+    //Custom Math
+    public static double slope(double x1, double y1, double x2, double y2){
         return (y2 - y1) / (x2 - x1);
     }
-    static double yintercept(double x1, double y1, double x2, double y2)
-    {
+    
+    public static double yintercept(double x1, double y1, double x2, double y2){
         return y1 - (slope(x1, y1, x2, y2) * x1);
     }
+
     public static void main (String [] args){
 
+    //
     Scanner input = new Scanner(System.in);
-
     String conformation;
+    String again;
     double x1;
     double y1;
     double x2;
     double y2;
 
+    //User Inputs and Output
+    do{
+    
+    
+    
     do{
 
     System.out.println("Enter your x1");
@@ -45,5 +53,13 @@ public class SlopeFormula {
 
     System.out.println("Slope is " + slope(x1, y1, x2, y2));
     System.out.println("Slope intercept formula is " + "y = " + slope(x1, y1, x2, y2) + "x " + "+ " + yintercept(x1, y1, x2, y2));
+    System.out.println("Do you want to use it again? ('yes' or 'no')?");
+    again = input.next();
+    }
+    while(again.equals("yes"));
+
+
+
+    System.exit(0);
     }
 }
